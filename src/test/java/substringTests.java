@@ -9,8 +9,8 @@ public class substringTests {
     public Object[][] indexesAndResult(){
         return new Object[][]{
                 {5,10, "is a "},
-                {0,1, "T"},
-                {1,1, ""}
+                {1,1, ""},
+                {0,setup().length(), setup()}
 
         };
     }
