@@ -20,7 +20,7 @@ public class substringTests {
         return new Object[][]{
                 {10,5},
                 {-1,4},
-                {0,Integer.MAX_VALUE},
+                {0,setup().length()+1},
                 {0,Integer.MAX_VALUE+1}
         };
     }
