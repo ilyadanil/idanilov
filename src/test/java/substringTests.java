@@ -3,6 +3,10 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+/**
+ * Test for {@link String}
+ */
+
 public class substringTests {
 
     @DataProvider(name = "validSubstrings")
@@ -11,7 +15,6 @@ public class substringTests {
                 {5,10, "is a "},
                 {1,1, ""},
                 {0,setup().length(), setup()}
-
         };
     }
 
@@ -33,14 +36,13 @@ public class substringTests {
 
     @Test(dataProvider = "validSubstrings")
     public void testValidSubstrings(int beginIndex, int endIndex, String result){
-
         Assert.assertEquals(setup().substring(beginIndex, endIndex), result);
     }
 
-    @Test(dataProvider = "negativeSubstrings", expectedExceptions = {StringIndexOutOfBoundsException.class},
+    @Test(dataProvider = "negativeSubstrings",
+            expectedExceptions = {StringIndexOutOfBoundsException.class},
             expectedExceptionsMessageRegExp = "String index out of range: .*")
     public void testNegativeSubstrings(int beginIndex, int endIndex){
-
         Assert.fail(setup().substring(beginIndex, endIndex));
     }
 }
